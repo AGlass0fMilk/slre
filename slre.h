@@ -49,6 +49,10 @@
 #ifndef SLRE_HEADER_DEFINED
 #define	SLRE_HEADER_DEFINED
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  * Compiled regular expression
  */
@@ -88,5 +92,9 @@ int slre_compile(struct slre *, const char *re);
  */
 int slre_match(const struct slre *, const char *buf, int buf_len,
 	struct cap *captured_substrings);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* SLRE_HEADER_DEFINED */
