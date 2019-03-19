@@ -56,7 +56,7 @@ extern "C" {
 /*
  * Compiled regular expression
  */
-struct slre {
+typedef struct slre {
 	unsigned char	code[256];
 	unsigned char	data[256];
 	int		code_size;
@@ -64,15 +64,15 @@ struct slre {
 	int		num_caps;	/* Number of bracket pairs	*/
 	int		anchored;	/* Must match from string start	*/
 	const char	*err_str;	/* Error string			*/
-};
+} slre_t;
 
 /*
  * Captured substring
  */
-struct cap {
+typedef struct cap {
 	const char	*ptr;		/* Pointer to the substring	*/
 	int		len;		/* Substring length		*/
-};
+} cap_t;
 
 /*
  * Compile regular expression. If success, 1 is returned.
